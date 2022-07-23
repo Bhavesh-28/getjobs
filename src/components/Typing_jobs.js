@@ -75,7 +75,7 @@ export default function TypingJob() {
           <input id="email" type={"email"} placeholder="your working email" value={Email} onChange={(event) => setEmail(event.target.value)}/>{" "}
           <Button onClick={handleSubmit}>Register</Button>
           <br/>
-          {Error ? <p style={{color: 'red'}}>No such email exists</p> : null}
+          {Error ? <p style={{color: 'red'}}>Please enter a valid email</p> : null}
         </>
       ) : 
       (
