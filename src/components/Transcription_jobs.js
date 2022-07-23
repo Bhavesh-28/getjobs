@@ -84,7 +84,7 @@ export default function TranscriptionJob() {
           />{" "}
           <Button onClick={handleSubmit}>Register</Button>
           <br />
-          {Error ? <p style={{ color: "red" }}>No such email exists</p> : null}
+          {Error ? <p style={{ color: "red" }}>Please enter a valid email</p> : null}
         </>
       ) : (
         <>
