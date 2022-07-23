@@ -1,0 +1,22 @@
+#heading{
+  line-height: 2rem;
+  font-weight: 450;
+  color: rgb(54, 89, 3);
+  word-spacing: 0.1rem;
+}
+
+#email{
+  height: 2rem;
+  border-radius: 0.4rem;
+  padding: .1rem .25rem;
+  transition:0s 1s;
+}
+
+#email:active , #email:focus{
+  width: 60%;
+  transition: 0s;
+}
+
+#image:hover{
+  transform: scale(1.2);
+}
