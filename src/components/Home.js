@@ -57,7 +57,7 @@ export default function Home() {
               overflow: "hidden",
               borderRadius: "1rem",
             }}
-            onClick={() => window.location.href = 'http://localhost:3000/get-typing-jobs'}
+            onClick={() => window.location.href = 'https://getjobsonline.herokuapp.com/get-typing-jobs'}
           >
             <div
               id="image"
@@ -88,7 +88,7 @@ export default function Home() {
               overflow: "hidden",
               borderRadius: "1rem",
             }}
-            onClick={() => window.location.href = 'http://localhost:3000/get-transcription-jobs'}
+            onClick={() => window.location.href = 'https://getjobsonline.herokuapp.com/get-transcription-jobs'}
           >
             <div
               id="image"
