@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Get Jobs Online
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React frontend project that presents typing and transcription job information. It includes separate pages for each job category, email registration forms, and a contact page. The project demonstrates routing, responsive layouts, input validation, and conditional feedback messages.
 
-## Available Scripts
+The forms are frontend demos: successful submission changes the displayed message in React state. There is no backend registration, email delivery, job dashboard, or payment system in this repository.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- A home page with typing and transcription category cards.
+- Job information pages with email validation using `validator`.
+- A contact form with a minimum message-length check.
+- Desktop navigation and a mobile navigation drawer.
+- Responsive layouts and transitions using Material UI.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Built with
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React 18 and Create React App (`react-scripts` 5).
+- React Router 6 for page routing.
+- Material UI 5 and Emotion for interface components and styling.
+- React Icons for navigation and form icons.
+- `validator` for email validation.
 
-### `npm test`
+## Run locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You need Node.js and npm installed.
 
-### `npm run build`
+```sh
+git clone https://github.com/Bhavesh-28/getjobs.git
+cd getjobs
+npm install
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Open [http://localhost:3000](http://localhost:3000). Use the navigation bar or mobile drawer to move between pages.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Route | Page |
+| --- | --- |
+| `/` | Home and job categories. |
+| `/get-typing-jobs` | Typing job information and email form. |
+| `/get-transcription-jobs` | Transcription job information and email form. |
+| `/contact` | Contact message form. |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project structure
 
-### `npm run eject`
+| File or directory | Purpose |
+| --- | --- |
+| `src/index.js` | React entry point and `BrowserRouter` setup. |
+| `src/App.js` | Shared page layout and route definitions. |
+| `src/components/Home.js` | Category cards and introductory content. |
+| `src/components/Typing_jobs.js` | Typing information and registration feedback. |
+| `src/components/Transcription_jobs.js` | Transcription information and registration feedback. |
+| `src/components/Contact.js` | Contact form validation and feedback. |
+| `src/components/Partials/` | Navigation and footer components. |
+| `src/styles/common.css` | Shared page styles. |
+| `public/` | Static files and the HTML entry template. |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Available commands
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Command | Purpose |
+| --- | --- |
+| `npm start` | Start the development server. |
+| `npm run build` | Create a production build in `build/`. |
+| `npm test` | Start the Create React App test runner in watch mode. |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+For deployment, serve the contents of `build/` and configure the host to return `index.html` for application routes so direct page visits work with `BrowserRouter`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Current limitations
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Registration and contact details are not saved or sent anywhere. Their success messages are only interface state and reset on reload.
+- Job rates, earnings, dashboard access, and withdrawal information are static page copy; the corresponding services are not implemented.
+- The home page category cards redirect to a hardcoded Heroku address. Use the navigation links or the local routes above when testing locally.
+- The contact form checks for at least 100 characters, although its error message says 100 words.
+- `src/App.test.js` is the original Create React App starter test. It still expects a "learn react" link and does not supply the router context required by the current app, so it is not a valid test of these pages.
